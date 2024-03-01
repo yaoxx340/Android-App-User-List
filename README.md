@@ -2,6 +2,9 @@
 
 This Android application is developed as part of the Fetch Rewards coding exercise. It demonstrates modern Android development with Jetpack Compose, following best practices and utilizing popular libraries such as Retrofit for networking, Hilt for dependency injection, and Coroutines for asynchronous operations.
 
+## Screenshots
+![image](https://filedn.com/lG3wh5UOTbLXHpMjSuvClEu/Screenshot_20240229_164645_Fetch%20Rewards%20Test.jpg)
+
 ## Assignment Overview
 The application fetches and displays a list of items from a provided JSON endpoint. It showcases the ability to:
 
@@ -30,7 +33,7 @@ A step-by-step series of examples that tell you how to get a development environ
 1. **Clone the repository:**
 
 ```bash
-git clone https://github.com/yourusername/yourprojectname.git
+git clone git@github.com:yaoxx340/Android-App-User-List.git
 ```
 
 2. **Open Android Studio and import the project**
