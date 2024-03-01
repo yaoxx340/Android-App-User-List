@@ -3,7 +3,7 @@
 This Android application is developed as part of the Fetch Rewards coding exercise. It demonstrates modern Android development with Jetpack Compose, following best practices and utilizing popular libraries such as Retrofit for networking, Hilt for dependency injection, and Coroutines for asynchronous operations.
 
 ## Screenshots
-![image](https://filedn.com/lG3wh5UOTbLXHpMjSuvClEu/Screenshot_20240229_164645_Fetch%20Rewards%20Test.jpg)
+![image](https://ibb.co/ZhhHGDS)
 
 ## Assignment Overview
 The application fetches and displays a list of items from a provided JSON endpoint. It showcases the ability to:
