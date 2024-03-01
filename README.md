@@ -1,17 +1,22 @@
 # Android-App-User-List
 
-Creating a comprehensive `README.md` is crucial for documenting your project, guiding new users, and providing a detailed overview for contributors. Below is a template tailored for a typical Android project using Jetpack Compose, Hilt for dependency injection, and other modern Android development practices. You should customize it to fit the specific details and features of your project.
+This Android application is developed as part of the Fetch Rewards coding exercise. It demonstrates modern Android development with Jetpack Compose, following best practices and utilizing popular libraries such as Retrofit for networking, Hilt for dependency injection, and Coroutines for asynchronous operations.
 
+## Assignment Overview
+The application fetches and displays a list of items from a provided JSON endpoint. It showcases the ability to:
+
+Fetch data from a network resource.
+Process and display data in a user-friendly manner.
+Implement a clean architecture with MVVM pattern.
 
 ## Features
-
-List the key features of your app. For example:
-
-- Modern UI with Jetpack Compose
-- MVVM Architecture
+- Modern UI: Utilizes Jetpack Compose for building native UIs.
+- Architecture: Implements MVVM pattern for clear separation of concerns.
+- Efficient Data Handling: Filters out items with empty or null names and groups by listId.
+- Sorting: Sorts items first by listId then by name
 - Dependency Injection with Hilt
 - Networking with Retrofit and Coroutines
-- Comprehensive Unit and UI Tests
+- Comprehensive Unit and UI Test
 
 ## Getting Started
 
