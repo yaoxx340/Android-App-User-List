@@ -19,6 +19,7 @@ import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.fetchrewardstest.domain.model.User
@@ -26,19 +27,22 @@ import com.example.fetchrewardstest.presentation.state.UserState
 import com.example.fetchrewardstest.presentation.viewmodel.UserViewModel
 
 @Composable
-fun UserListScreen(viewModel: UserViewModel = hiltViewModel()) {
-    val userState by viewModel.userState.observeAsState()
+fun UserListScreen(userState: UserState? = null) {
+    val viewModel: UserViewModel = hiltViewModel()
+    val observedUserState by viewModel.userState.observeAsState()
+    val finalState = userState ?: observedUserState
 
-    when (userState) {
+    when (finalState) {
         is UserState.Loading -> LoadingView()
         is UserState.Success -> {
-            if ((userState as UserState.Success).users.isEmpty()) {
+            val successState = finalState as? UserState.Success
+            if (successState?.users.isNullOrEmpty()) {
                 EmptyListView()
             } else {
-                UserListView(users = (userState as UserState.Success).users)
+                UserListView(users = successState?.users ?: listOf())
             }
         }
-        is UserState.Error -> ErrorView((userState as UserState.Error).message)
+        is UserState.Error -> ErrorView((finalState as UserState.Error).message)
         else -> EmptyListView()
     }
 }
@@ -88,7 +92,7 @@ fun UserListView(users: List<User>) {
 @Composable
 fun LoadingView() {
     Box(contentAlignment = Alignment.Center, modifier = Modifier.fillMaxSize()) {
-        CircularProgressIndicator(color = MaterialTheme.colorScheme.primary)
+        CircularProgressIndicator(color = MaterialTheme.colorScheme.primary, modifier = Modifier.testTag("loadingIndicator"))
     }
 }
 

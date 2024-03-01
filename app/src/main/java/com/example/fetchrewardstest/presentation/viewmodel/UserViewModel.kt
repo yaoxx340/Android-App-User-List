@@ -20,7 +20,7 @@ class UserViewModel @Inject constructor(private val userRepository: UserReposito
         fetchUsers()
     }
 
-    private fun fetchUsers() {
+    fun fetchUsers() {
         _userState.value = UserState.Loading
         viewModelScope.launch {
             try {

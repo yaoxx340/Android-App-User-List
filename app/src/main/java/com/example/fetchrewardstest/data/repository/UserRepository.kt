@@ -21,5 +21,4 @@ class UserRepository @Inject constructor(private val apiService: UserApiService)
             }
         }
     }
-
 }

@@ -74,6 +74,13 @@ dependencies {
     implementation(libs.converter.gson)
 
     testImplementation(libs.junit)
+    testImplementation(libs.jetbrains.kotlinx.coroutines.test)
+    testImplementation(libs.androidx.core.testing)
+
+    // Mockk
+    testImplementation(libs.mockk.android)
+    testImplementation(libs.mockk.agent)
+
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(platform(libs.androidx.compose.bom))
